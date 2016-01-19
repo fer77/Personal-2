@@ -1,7 +1,6 @@
 {
   "name": "ecommerce",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,6 +13,17 @@
     "cors": "^2.7.1",
     "express": "^4.13.3",
     "mongodb": "^2.1.4",
-    "mongojs": "^2.3.0"
-  }
+    "mongojs": "^2.3.0",
+    "mongoose": "^4.3.6"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fer77/Personal-2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fer77/Personal-2/issues"
+  },
+  "homepage": "https://github.com/fer77/Personal-2#readme",
+  "description": ""
 }
