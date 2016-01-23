@@ -23,6 +23,9 @@ body {
     margin: 0 2px;
     position: relative;
 }
+.icon {
+    width: 239px;
+}
 .title {
     color: #000;
     font-size: 15px;

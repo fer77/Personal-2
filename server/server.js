@@ -18,6 +18,11 @@ app.get('/api/products', mainServerCtrl.read);
 app.put('/api/products/:id', mainServerCtrl.update);
 app.delete('/api/products/:id', mainServerCtrl.delete);
 
+app.post('/api/order', mainServerCtrl.create);
+app.get('/api/order', mainServerCtrl.read);
+app.post('/api/cart', mainServerCtrl.create);
+app.put('/api/cart/:id', mainServerCtrl.update);
+
 mongoose.set('debug', true);
 mongoose.connect(mongoUri);
 mongoose.connection.once('open', function () {
