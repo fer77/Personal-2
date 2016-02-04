@@ -149,9 +149,9 @@ section {
   overflow: hidden;
 }
 
-section#home {
-  /*background-color: #005aff;
-  background-color: #F0C771;*/
+section #home {
+  background-color: #005aff;
+  /*background-color: #F0C771;*/
   margin-top: 70px;
   max-width: 615px;
   /*margin: 40px auto;*/
