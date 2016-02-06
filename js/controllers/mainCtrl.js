@@ -1,4 +1,5 @@
 angular.module('myApp').controller('mainCtrl', ['$scope', 'itunesSvc', function ($scope, itunesSvc) {
+
     $scope.pods = [
         {
             icon: 'http://nationalpublicmedia.com/wp-content/uploads/2014/06/planetmoney.png',
@@ -25,4 +26,5 @@ angular.module('myApp').controller('mainCtrl', ['$scope', 'itunesSvc', function 
             // link: 'http://feeds.99percentinvisible.org/99percentinvisible'
 	  }
 	];
+
 }]);

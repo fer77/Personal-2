@@ -20,29 +20,12 @@ $(document).ready(function() {
 
   $(document).scroll(function() {
 
-     var position = Math.floor($(this).scrollTop() / 800) + 1;
+     var position = Math.floor($(this).scrollTop() / 765) + 1;
 
      $('header nav a.active').removeClass('active');
      $('header nav a.link-' + position).addClass('active');
 
   });
-//Carousel
-$(function(){
-  var front = $('.Front'),
-      others = ['Left2', 'Left', 'Right', 'Right2'];
-
-  $('.Carousel').on('click', '.Items', function() {
-    var $this = $(this);
-
-    $.each(others, function(i, cl) {
-      if ($this.hasClass(cl)) {
-        front.removeClass('Front').addClass(cl);
-        front = $this;
-        front.addClass('Front').removeClass(cl);
-      }
-    });
-  });
-});
 // Carousel
 
 $('.carousel').children(":first").addClass('isActive');
@@ -55,6 +38,6 @@ function rotateClass() {
 // Set the Delay Time
 setInterval(function () {
   rotateClass();
-}, 5000);
+}, 6000);
 
 });

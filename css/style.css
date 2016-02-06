@@ -44,7 +44,9 @@ h2 {
   max-width: 669px;
   margin: 0 auto;
 }
-
+.topFive {
+  padding-top: 125px;
+}
 
 /*blog-post*/
 .box * {
@@ -60,7 +62,7 @@ h2 {
 body {
   margin: 0;
   padding: 0;
-  background: #282931;
+  /*background: #005aff;*/
   -webkit-font-smoothing: antialiased;
   /*font-family: 'Varela Round', sans-serif;*/
   height: 100%;
@@ -68,7 +70,7 @@ body {
 
 canvas {
   height: 100vh;
-  z-index: 5;
+  z-index: 0;
   position: fixed;
   top: 0px;
 }
@@ -140,13 +142,13 @@ section {
   overflow: hidden;
 }
 
-section #home {
+section#home {
   background-color: #005aff;
   /*background-color: #F0C771;*/
   margin-top: 70px;
-  max-width: 615px;
+  /*max-width: 615px;*/
   /*margin: 40px auto;*/
-  font-family: "Montserrat", sans-serif;
+  /*font-family: "Montserrat", sans-serif;*/
   line-height: 1.6;
   color: #fff;
 }
