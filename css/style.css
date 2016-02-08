@@ -336,13 +336,13 @@ input[type="checkbox"]{display:none;}
   justify-content: space-around;
 }
 .box{
-  z-index: 6;
+  /*z-index: 6;*/
   display: block;
   width: 250px;
   height: 200px;
   position: relative;
   overflow: hidden;
-  margin: 25px;
+  margin: 8px;
   border: 0px solid #000;
 }
 .icon {
@@ -352,14 +352,14 @@ input[type="checkbox"]{display:none;}
 .cover{
   width: inherit;
   height: inherit;
-  background: rgba(0,0,0,0.45);
+  background: rgba(1, 1, 1, 0.75);
   position: absolute;
   top: 0px;
   -webkit-transition: all 0.4s cubic-bezier(.99,.99,0,.61);
   padding: 1em;
   color: #fff;
   overflow: hidden;
-  text-shadow: 1px 1px 0px #000;
+  /*text-shadow: 1px 1px 0px #000;*/
 }
 .cover .title{
   font-size: 16pt;
@@ -373,43 +373,151 @@ input[type="checkbox"]{display:none;}
   font-size: 10pt;
   overflow: hidden;
 }
-.btn div{
-  height: 24px;
-  width: 78px;
-   border-top: 1px solid #96d1f8;
-   background: #65a9d7;
-   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
-   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
-   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
-   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
-   background: -o-linear-gradient(top, #3e779d, #65a9d7);
-   padding: 2px 4px;
-   -webkit-border-radius: 16px;
-   -moz-border-radius: 16px;
-   border-radius: 16px;
-   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   box-shadow: rgba(0,0,0,1) 0 1px 0;
-   text-shadow: rgba(0,0,0,.4) 0 1px 0;
-   color: white;
-   font-size: 12px;
-   font-family: 'Lato', sans-serif;
-   text-decoration: none;
-   vertical-align: middle;
-   }
-.btn:hover {
-   border-top-color: #28597a;
-   background: #28597a;
-   color: #ccc;
-   }
-.btn:active {
-   border-top-color: #1b435e;
-   background: #1b435e;
-   }
-.btn a{
-  color: #fff;
-  text-decoration: none;
+/*like/dislike*/
+
+.vote {
+  display: block;
+  width: 150px;
+  /*margin: 100px auto;*/
+  /*border: solid 1px #ccc;*/
+  overflow: hidden;
+  padding: 20px;
 }
+.vote div {
+  float: left;
+  position: relative;
+}
+.vote div:hover {
+  cursor: pointer;
+}
+.vote div span {
+  background: url("http://alanizdesign.com/wp-content/uploads/2015/02/icon-thumbs-bw.png") no-repeat;
+  width: 13px;
+  height: 13px;
+  display: block;
+  float: left;
+  margin-right: 7px;
+}
+.vote div p {
+  float: left;
+  font-size: 13px;
+  margin: 0;
+  color: #fff;
+}
+.vote div i {
+  /*background: #666;*/
+  position: absolute;
+  left: 18px;
+  top: -2px;
+  width: 35px;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+  opacity: 0.0;
+  display: none\9;
+}
+.vote div i.blip {
+  -webkit-animation: blip 1.3s ease-out;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation: blip 1.3s ease-out;
+  -moz-animation-iteration-count: 1;
+  -o-animation: blip 1.3s ease-out;
+  -o-animation-iteration-count: 1;
+  animation: blip 1.3s ease-out;
+  animation-iteration-count: 1;
+}
+.vote div.t-up {
+  float: left;
+  margin-right: 15px;
+}
+.vote div.t-up span {
+  background-position: 0 0px;
+}
+.vote div.t-up span.clicked {
+  background-position: 0 -13px;
+}
+.vote div.t-up i {
+  color: #53da45;
+}
+.vote div.t-down {
+  float: right;
+}
+.vote div.t-down span {
+  background-position: -15px 0px;
+}
+.vote div.t-down span.clicked {
+  background-position: -15px -13px;
+}
+.vote div.t-down i {
+  font-size: 18px;
+  color: #e52929;
+}
+@-webkit-keyframes blip {
+  0% {
+    -webkit-transform: scale(0.1, 0.1);
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 1.0;
+  }
+  100% {
+    -webkit-transform: scale(1.8, 1.8);
+    opacity: 0.0;
+  }
+}
+@-moz-keyframes blip {
+  0% {
+    -moz-transform: scale(0.1, 0.1);
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 1.0;
+  }
+  100% {
+    -moz-transform: scale(1.8, 1.8);
+    opacity: 0.0;
+  }
+}
+@-o-keyframes blip {
+  0% {
+    -o-transform: scale(0.1, 0.1);
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 1.0;
+  }
+  100% {
+    -o-transform: scale(1.8, 1.8);
+    opacity: 0.0;
+  }
+}
+@-ms-keyframes blip {
+  0% {
+    -ms-transform: scale(0.1, 0.1);
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 1.0;
+  }
+  100% {
+    -ms-transform: scale(1.8, 1.8);
+    opacity: 0.0;
+  }
+}
+@keyframes blip {
+  0% {
+    transform: scale(0.1, 0.1);
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 1.0;
+  }
+  100% {
+    transform: scale(1.8, 1.8);
+    opacity: 0.0;
+  }
+}
+
 .box:hover .left{
   -webkit-transition: all 0.4s cubic-bezier(.99,.99,0,.61);
    left: 0px;

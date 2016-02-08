@@ -1,4 +1,4 @@
-angular.module('myApp').controller('mainCtrl', ['$scope', 'itunesSvc', function ($scope, itunesSvc) {
+angular.module('myApp').controller('mainCtrl', ['$scope', function ($scope) {
 
     $scope.pods = [
         {

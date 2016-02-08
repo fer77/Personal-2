@@ -40,4 +40,6 @@ setInterval(function () {
   rotateClass();
 }, 6000);
 
+//like/dislike
+
 });
