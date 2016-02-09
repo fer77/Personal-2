@@ -3,25 +3,21 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 
-var mainServerCtrl = require('../server/controllers/mainServerCtrl');
+var mainServerCtrl = require('../server/controllers/votesCtrl');
 
 var app = express();
+
+app.use(express.static(__dirname + './../js'));
 app.use(bodyParser.json());
 app.use(cors());
 
 var nodePort = 3000;
-var mongoUri = 'mongodb://localhost:27017/ecommerce-mongoose';
+var mongoUri = 'mongodb://localhost:27017/podcastApp-mongoose';
 
 // Endpoints
-app.post('/api/products', mainServerCtrl.create);
-app.get('/api/products', mainServerCtrl.read);
-app.put('/api/products/:id', mainServerCtrl.update);
-app.delete('/api/products/:id', mainServerCtrl.delete);
-
-app.post('/api/order', mainServerCtrl.create);
-app.get('/api/order', mainServerCtrl.read);
-app.post('/api/cart', mainServerCtrl.create);
-app.put('/api/cart/:id', mainServerCtrl.update);
+app.post('/votes', votesCtrl.create);
+app.get('/votes', votesCtrl.read);
+app.put('/votes/:id', votesCtrl.update);
 
 mongoose.set('debug', true);
 mongoose.connect(mongoUri);
