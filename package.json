@@ -1,7 +1,7 @@
 {
   "name": "ecommerce",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "server/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -11,10 +11,11 @@
   "dependencies": {
     "body-parser": "^1.14.2",
     "cors": "^2.7.1",
-    "express": "^4.13.3",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
     "mongodb": "^2.1.4",
     "mongojs": "^2.3.0",
-    "mongoose": "^4.3.6"
+    "mongoose": "^4.4.2"
   },
   "devDependencies": {},
   "repository": {
