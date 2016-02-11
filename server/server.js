@@ -3,12 +3,12 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var session = require('express-session')
 var cors = require('cors');
-
 var podcastsCtrl = require('./controllers/podcastsCtrl.js');
 var userCtrl = require('./controllers/userCtrl.js')
+
 var app = express();
 
-app.use(express.static(__dirname + './../js'));
+app.use(express.static(__dirname + './../public'));
 app.use(bodyParser.json());
 app.use(cors());
 
