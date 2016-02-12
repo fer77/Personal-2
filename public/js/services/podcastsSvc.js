@@ -11,18 +11,13 @@ this.downVote = function(podcast) {
   $http.put('/podcast/' + podcast.id.attributes["im:id"], {title:podcast['im:name'].label,direction:'downvote'}).then(function(count) {
       return count.data;
   });
+};
+
+this.getCurrentVotes = function(podcastId) {
+  //console.log(podcastId);
+  return $http.get('/podcast?podcastId=' + podcastId).then(function(podcastInfo) {
+      return podcastInfo.data;
+  });
 }
 
-  });
-
-
-
-
-// var deferred = $q.defer();
-//
-// $http.post('address', data).then(function(response){
-//     deferred.resolve(response);
-// }, function(error){
-//     deferred.reject('There was an error');
-// });
-// return deferred.promise;
+});

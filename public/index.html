@@ -14,23 +14,6 @@
   </head>
 
   <body>
-    <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '772759989535762',
-      xfbml      : true,
-      version    : 'v2.5'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-    </script>
 
     <header>
       <h1>Pods</h1>
@@ -71,17 +54,17 @@
       </div>
     </section>
 
-    <section id="about">
-       <form action="#" method="post"> <!-- ng-submit="authentication..." -->
+    <section id="about" ng-controller="userCtrl">
+       <form>
       <div class="header">
          <p>Sign Up</p>
       </div>
       <div class="description">
-        <p>You can keep up with my rant on what I think are the best podcasts out there.</p>
+        <p>Keep up with your favorite podcasts.</p>
       </div>
-      <div class="input">
-        <input type="text" class="button" id="email" name="email" placeholder="NAME@EXAMPLE.COM"> <!-- ng-model="user.email" -->
-        <input type="submit" class="button" id="submit" value="SIGN UP">
+      <div class="inputs">
+        <input type="text" class="email" ng-model="email"  placeholder="Name@example.com"></input>
+        <input type="submit" class="submit" ng-click="signUp(email)" value="SIGN UP"></input>
       </div>
       </form>
     </section>
@@ -132,16 +115,19 @@
     <script src="js/particles.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers/iTunes2Ctrl.js"></script>
     <script src="js/controllers/iTunesCtrl.js"></script>
     <script src="js/controllers/likeDislikeCtrl.js"></script>
+    <script src="js/controllers/userCtrl.js"></script>
     <script src="js/directives/podInfo.js"></script>
     <script src="js/directives/likeDislike.js"></script>
     <script src="js/directives/topFive.js"></script>
     <script src="js/services/itunesSvc.js"></script>
     <script src="js/services/iTunes2Svc.js"></script>
     <script src="js/services/podcastsSvc.js"></script>
+    <script src="js/services/userSvc.js"></script>
 
   </body>
 

@@ -7,6 +7,10 @@ var userSchema = new Schema({
         type: String,
         required: true
     },
+    // password: {
+    //   type: String
+    // },
+    // name: { type: String },
     // podcast: [
     //   { type: mongoose.Schema.Types.ObjectId,
     //   ref: 'Podcasts' }

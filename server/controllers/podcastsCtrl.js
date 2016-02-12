@@ -10,7 +10,7 @@ module.exports = {
 
     read: function (req, res) {
         console.log('req.query: ', req.query);
-        Podcasts.find(req.query)
+        Podcasts.find({podId: req.query.podcastId})
             .exec(function (err, result) {
                 if (err) return res.status(500).send(err);
                 res.send(result);
@@ -25,8 +25,9 @@ module.exports = {
             console.log(result);
 
             if (result) {
-              if(req.body.direction ==="upvote" || req.body.direction ==="downvote"){
+              if(req.body.direction ==="upvote") {
               result.upVotes += 1;
+            } else {
               result.downVotes += 1;
             }
 

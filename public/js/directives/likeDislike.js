@@ -7,7 +7,7 @@ angular.module('myApp').directive('likeDislike', function () {
         templateUrl: 'js/directives/likeDislike.html',
         controller: 'likeDislikeCtrl',
         link: function (scope, element, attributes) {
-          console.log(element);
+          //console.log(element);
           // element.find('.fa-thumbs-up') = 'white';
           // element.find('.fa-thumbs-down') = 'white';
 

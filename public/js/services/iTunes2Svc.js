@@ -9,5 +9,6 @@ angular.module('myApp').service('iTunes2Svc', function($http, $q) {
 		});
     return deferred.promise;
   };
+  
 
 });

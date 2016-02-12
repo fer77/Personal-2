@@ -587,23 +587,18 @@ input[type="checkbox"]{display:none;}
   }
 
   .description {
-    font-size: 16px;
+    font-size: 22px;
     letter-spacing: 1px;
     line-height: 1.3em;
     margin: -2px 0 45px;
   }
 
-  .input {
+  .inputs {
     display: flex;
     align-items: center;
   }
 
-  .button {
-    height: 44px;
-    border: none;
-  }
-
-  #email {
+  .email {
     z-index: 20;
     width: 75%;
     background: #FDFCFB;
@@ -612,28 +607,33 @@ input[type="checkbox"]{display:none;}
     letter-spacing: 1px;
     text-indent: 5%;
     border-radius: 5px 0 0 5px;
+    height: 44px;
+    border: none;
   }
 
-  #submit {
+  input[type=submit].submit {
     z-index: 20;
     width: 25%;
-    height: 38px;
+    height: 35px;
     background: #E86C8D;
     font-family: inherit;
     font-weight: bold;
-    color: inherit;
+    color: white;
+    text-align: center;
     letter-spacing: 1px;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
-    transition: background .3s ease-in-out;
+    transition: background .3s ease;
+    height: 38px;
+    border: none;
   }
 
-  #submit:hover {
+  input[type=submit].submit:hover {
     background: #d45d7d;
   }
 
-  input:focus {
-    outline: none;
-    outline: 2px solid #E86C8D;
-    box-shadow: 0 0 2px #E86C8D;
-  }
+ /*.submit:focus {
+  outline: none;
+  outline: 2px solid #E86C8D;
+  box-shadow: 0 0 2px #E86C8D;
+}*/
