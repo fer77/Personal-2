@@ -8,4 +8,5 @@ angular.module('myApp').controller('likeDislikeCtrl', function($scope, podcastsS
     podcastsSvc.downVote(podcast);
     $scope.downVotes += 1;
   };
-});
+
+  });

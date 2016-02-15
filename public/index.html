@@ -2,6 +2,7 @@
 <html ng-app="myApp">
 
   <head>
+
     <meta charset="utf-8">
     <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" type="text/css">
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <title>PodMaker</title>
+
   </head>
 
   <body>
@@ -27,8 +29,6 @@
       </nav>
     </header>
 
-    <!-- <div id="particles-js"> -->
-
     <section id="home">
       <div ng-controller="iTunesCtrl">
           <ul class="carousel" ng-repeat="pod in data">
@@ -38,15 +38,6 @@
     </section>
 
     <section id="podcasts">
-      <!-- <like-dislike></like-dislike> -->
-      <!-- <div class="vote">
-      											  <div class="t-up">
-          <span></span><p>3071</p><i class="add">+1</i>
-        </div>
-      											  <div class="t-down">
-          <span></span><p>1071</p><i class="sub">-1</i>
-        </div>
-      										</div> -->
       <div class="blog-post" ng-controller="iTunes2Ctrl">
         <div ng-repeat="pod in pods">
           <pod-info class="box" info="pod"></pod-info>
@@ -54,17 +45,18 @@
       </div>
     </section>
 
-    <section id="about" ng-controller="userCtrl">
-       <form>
+    <section id="about">
+       <form ng-controller="userCtrl">
       <div class="header">
-         <p>Sign Up</p>
+         <p ng-if="!currentUser">See What's New!</p>
+         <p ng-if="currentUser">Welcome {{ currentUser.email }}</p>
       </div>
       <div class="description">
         <p>Keep up with your favorite podcasts.</p>
       </div>
-      <div class="inputs">
+      <div class="inputs" ng-hide="currentUser">
         <input type="text" class="email" ng-model="email"  placeholder="Name@example.com"></input>
-        <input type="submit" class="submit" ng-click="signUp(email)" value="SIGN UP"></input>
+        <input type="submit" class="submit" ng-hide="currentUser" ng-click="signUp(email)" value="SIGN IN"></input>
       </div>
       </form>
     </section>
@@ -75,7 +67,7 @@
           <div class="twelve column">
             <div class="logo">F</div>
             <h1>Fernando D Fernandez</h1>
-            <h2> Web developer and podcast aficionado</h2>
+            <h2> Podcast aficionado</h2>
           </div>
         </div>
 
@@ -88,7 +80,7 @@
 
           <div class="one-half column">
             <div class="rant">
-              <h1>Why have a news letter when I can have you follow me socially instead, cheaper too.</h1>
+              <h1>Why have a news letter when I you can follow me socially instead, cheaper too.</h1>
             </div>
           </div>
         </div>
@@ -101,7 +93,7 @@
           <ul>
             <a href="https://twitter.com/Fernando777"><li class="entypo-twitter"></li></a>
             <a href="https://www.facebook.com/4nando"><li class="entypo-facebook"></li></a>
-            <li class="entypo-pinterest"></li>
+            <li class="entypo-linkedin"></li>
           </ul>
         </div>
       </div>
@@ -112,7 +104,6 @@
     <script type="text/javascript" src="js/jq.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script src="js/prefixfree.min.js"></script>
-    <script src="js/particles.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>

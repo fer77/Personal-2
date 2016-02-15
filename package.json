@@ -15,7 +15,9 @@
     "express-session": "^1.13.0",
     "mongodb": "^2.1.4",
     "mongojs": "^2.3.0",
-    "mongoose": "^4.4.2"
+    "mongoose": "^4.4.2",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {},
   "repository": {
