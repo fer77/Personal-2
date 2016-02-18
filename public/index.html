@@ -1,7 +1,29 @@
-<!DOCTYPE html>
 <html ng-app="myApp">
+<head >
+    <!-- /*<style type="text/css">
+        @charset "UTF-8";
+        [ng\:cloak],
+        [ng-cloak],
+        [data-ng-cloak],
+        [x-ng-cloak],
+        .ng-cloak,
+        .x-ng-cloak,
+        .ng-hide:not(.ng-hide-animate) {
+            display: none !important;
+        }
 
-  <head>
+        ng\:form {
+            display: block;
+        }
+
+        .ng-animate-shim {
+            visibility: hidden;
+        }
+
+        .ng-anchor {
+            position: absolute;
+        }
+    </style>*/ -->
 
     <meta charset="utf-8">
     <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
@@ -13,93 +35,115 @@
 
     <title>PodMaker</title>
 
-  </head>
+</head>
 
-  <body>
+<body>
 
     <header>
-      <h1>Pods</h1>
-      <nav role="navigation">
-        <ul>
-          <li><a class="link-1 entypo-home active" href="#home"></a></li>
-           <li><a class="link-2 entypo-rss" href="#podcasts"></a></li>
-          <li><a class="link-3 entypo-user" href="#about"></a></li>
-          <li><a class="link-4 entypo-mail" href="#contact"></a></li>
-        </ul>
-      </nav>
+        <h1>Pods</h1>
+        <nav role="navigation">
+            <ul>
+                <li>
+                    <a class="link-1 entypo-home" href="#home"></a>
+                </li>
+                <li>
+                    <a class="link-2 entypo-rss active" href="#podcasts"></a>
+                </li>
+                <li>
+                    <a class="link-3 entypo-user" href="#about"></a>
+                </li>
+                <li>
+                    <a class="link-4 entypo-mail" href="#contact"></a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <section id="home">
-      <div ng-controller="iTunesCtrl">
-          <ul class="carousel" ng-repeat="pod in data">
-            <top-five info="pod"></top-five>
-          </ul>
-      </div>
+        <div ng-controller="iTunesCtrl">
+            <!-- ngRepeat: pod in data -->
+            <ul class="carousel" ng-repeat="pod in data">
+
+                <top-five info="pod"></top-five>
+
+            </ul>
+            <!-- end ngRepeat: pod in data -->
+        </div>
     </section>
 
     <section id="podcasts">
-      <div class="blog-post" ng-controller="iTunes2Ctrl">
-        <div ng-repeat="pod in pods">
-          <pod-info class="box" info="pod"></pod-info>
+        <div class="blog-post" ng-controller="iTunes2Ctrl">
+            <!-- ngRepeat: pod in pods -->
+            <div ng-repeat="pod in pods">
+                <pod-info class="box" info="pod">
+                  <like-dislike></like-dislike>
+                </pod-info>
+            </div>
         </div>
-      </div>
+            <!-- end ngRepeat: pod in pods -->
     </section>
 
     <section id="about">
-       <form ng-controller="userCtrl">
-      <div class="header">
-         <p ng-if="!currentUser">See What's New!</p>
-         <p ng-if="currentUser">Welcome {{ currentUser.email }}</p>
-      </div>
-      <div class="description">
-        <p>Keep up with your favorite podcasts.</p>
-      </div>
-      <div class="inputs" ng-hide="currentUser">
-        <input type="text" class="email" ng-model="email"  placeholder="Name@example.com"></input>
-        <input type="submit" class="submit" ng-hide="currentUser" ng-click="signUp(email)" value="SIGN IN"></input>
-      </div>
-      </form>
+        <form ng-controller="userCtrl">
+            <div class="header">
+                <!-- ngIf: !currentUser -->
+                <p ng-if="!currentUser">See What's New!</p>
+                <!-- end ngIf: !currentUser -->
+                <!-- ngIf: currentUser -->
+            </div>
+            <div class="description">
+                <p>Keep up with your favorite podcasts.</p>
+            </div>
+            <div class="inputs" ng-hide="currentUser">
+                <input type="text" class="email" ng-model="email" placeholder="Name@example.com">
+                <input type="submit" class="submit" ng-hide="currentUser" ng-click="signUp(email)" value="SIGN IN">
+            </div>
+        </form>
     </section>
 
     <section id="contact">
-      <div class="container">
-        <div class="row top">
-          <div class="twelve column">
-            <div class="logo">F</div>
-            <h1>Fernando D Fernandez</h1>
-            <h2> Podcast aficionado</h2>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="one-half column">
-            <div class="rant">
-              <h1>Podcasts are a way of keeping our need for story telling alive.  It is also a great way of keeping up with the things that intrest you.</h1>
+        <div class="container">
+            <div class="row top">
+                <div class="twelve column">
+                    <div class="logo">F</div>
+                    <h1>Fernando D Fernandez</h1>
+                    <h2> Podcast aficionado</h2>
+                </div>
             </div>
-          </div>
 
-          <div class="one-half column">
-            <div class="rant">
-              <h1>Why have a news letter when I you can follow me socially instead, cheaper too.</h1>
+            <div class="row">
+                <div class="one-half column">
+                    <div class="rant">
+                        <h1>Podcasts are a way of keeping our need for story telling alive.  It is also a great way of keeping up with the things that intrest you.</h1>
+                    </div>
+                </div>
+
+                <div class="one-half column">
+                    <div class="rant">
+                        <h1>Why have a news letter when I you can follow me socially instead, cheaper too.</h1>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
 
-      <div id="social-menu">
-        <input type="checkbox" class="checkbox" id="share" unchecked>
-        <label for="share" class="label entypo-export"></label>
-        <div class="social">
-          <ul>
-            <a href="https://twitter.com/Fernando777"><li class="entypo-twitter"></li></a>
-            <a href="https://www.facebook.com/4nando"><li class="entypo-facebook"></li></a>
-            <li class="entypo-linkedin"></li>
-          </ul>
+        <div id="social-menu">
+            <input type="checkbox" class="checkbox" id="share" unchecked="">
+            <label for="share" class="label entypo-export"></label>
+            <div class="social">
+                <ul>
+                    <a href="https://twitter.com/Fernando777">
+                        <li class="entypo-twitter"></li>
+                    </a>
+                    <a href="https://www.facebook.com/4nando">
+                        <li class="entypo-facebook"></li>
+                    </a>
+                    <li class="entypo-linkedin"></li>
+                </ul>
+            </div>
         </div>
-      </div>
     </section>
 
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script type="text/javascript" src="js/jq.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
@@ -120,6 +164,8 @@
     <script src="js/services/podcastsSvc.js"></script>
     <script src="js/services/userSvc.js"></script>
 
-  </body>
 
+
+
+</body>
 </html>
