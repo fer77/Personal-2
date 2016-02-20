@@ -86,10 +86,7 @@
     <section id="about">
         <form ng-controller="userCtrl">
             <div class="header">
-                <!-- ngIf: !currentUser -->
-                <p ng-if="!currentUser">See What's New!</p>
-                <!-- end ngIf: !currentUser -->
-                <!-- ngIf: currentUser -->
+                <p ng-if="!currentUser">{{ signUp }}See What's New!</p>
             </div>
             <div class="description">
                 <p>Keep up with your favorite podcasts.</p>

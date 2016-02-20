@@ -8,11 +8,11 @@ angular.module('myApp').controller('userCtrl', function($scope, userSvc) {
     });
   };
 
-  userSvc.getItunesTrendingData().then(function(result) {
-    console.log(result);
-    $scope.trending = result.data.feed.entry;
-  }, function(err){
-  console.log("Ooops",  err);
-  });
+  // userSvc.getItunesTrendingData().then(function(result) {
+  //   console.log(result);
+  //   $scope.trending = result.data.feed.entry;
+  // }, function(err){
+  // console.log("Ooops",  err);
+  // });
 
 });
